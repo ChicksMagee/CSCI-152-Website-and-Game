@@ -1,0 +1,58 @@
+[
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  [
+    {
+      "folder": "",
+      "bitmap": "beachwater[6x0]",
+      "hue": 0,
+      "x": 961,
+      "y": 2399,
+      "z": 4,
+      "iconIndex": 0,
+      "anchorX": 0.5,
+      "anchorY": 1,
+      "scaleX": 400,
+      "scaleY": 100,
+      "blend": 0,
+      "opacity": 204,
+      "xFrames": 6,
+      "yFrames": 0,
+      "frameUpdate": 20,
+      "smooth": false
+    }
+  ],
+  null,
+  null,
+  [
+    {
+      "folder": "",
+      "bitmap": "beachwater[6x0]",
+      "hue": 0,
+      "x": 650,
+      "y": 4799,
+      "z": 3,
+      "iconIndex": 0,
+      "anchorX": 0.5,
+      "anchorY": 1,
+      "scaleX": 800,
+      "scaleY": 75,
+      "blend": 0,
+      "opacity": 204,
+      "xFrames": 6,
+      "yFrames": 0,
+      "frameUpdate": 15,
+      "smooth": false
+    }
+  ]
+]
