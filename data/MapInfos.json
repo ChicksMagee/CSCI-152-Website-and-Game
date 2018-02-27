@@ -64,11 +64,7 @@ null,
 {"id":62,"expanded":true,"name":"Forest Clearing","order":18,"parentId":61,"scrollX":2184,"scrollY":1274.6666666666667},
 null,
 null,
-<<<<<<< HEAD
 {"id":65,"expanded":true,"name":"Fire","order":57,"parentId":0,"scrollX":2184,"scrollY":1274.6666666666667},
-=======
-{"id":65,"expanded":true,"name":"Fire","order":57,"parentId":0,"scrollX":712,"scrollY":1044},
->>>>>>> 103754d95162ec4f5d1475f80af611aa3ad22abd
 {"id":66,"expanded":true,"name":"MAP066","order":58,"parentId":65,"scrollX":816,"scrollY":1038},
 {"id":67,"expanded":true,"name":"MAP067","order":59,"parentId":66,"scrollX":1738,"scrollY":2412},
 {"id":68,"expanded":true,"name":"MAP068","order":60,"parentId":67,"scrollX":1638,"scrollY":947},
