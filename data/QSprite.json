@@ -745,5 +745,241 @@
         ]
       }
     }
+  },
+  "bapho": {
+    "name": "bapho",
+    "cols": 8,
+    "rows": 16,
+    "anchorX": 1,
+    "anchorY": 1,
+    "sampleImg": "C:\\Users\\Zarudin\\Documents\\Games\\Aeviternus\\img\\characters\\%bapho-sprite.png",
+    "poses": {
+      "move1": {
+        "name": "move1",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "move3": {
+        "name": "move3",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      "move7": {
+        "name": "move7",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          16,
+          17,
+          18,
+          19
+        ]
+      },
+      "move9": {
+        "name": "move9",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          27,
+          26,
+          25,
+          24
+        ]
+      },
+      "atk1": {
+        "name": "atk1",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          32,
+          33,
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      "atk3": {
+        "name": "atk3",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          45,
+          44,
+          43,
+          42,
+          41,
+          40
+        ]
+      },
+      "atk7": {
+        "name": "atk7",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          96,
+          97,
+          98,
+          99,
+          100
+        ]
+      },
+      "atk9": {
+        "name": "atk9",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          108,
+          107,
+          106,
+          105,
+          104
+        ]
+      },
+      "std1": {
+        "name": "std1",
+        "speed": 10,
+        "adjust": true,
+        "pattern": [
+          "",
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ]
+      },
+      "std3": {
+        "name": "std3",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          71,
+          70,
+          69,
+          68,
+          67,
+          66,
+          65,
+          64
+        ]
+      },
+      "std7": {
+        "name": "std7",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79
+        ]
+      },
+      "std9": {
+        "name": "std9",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          87,
+          86,
+          85,
+          84,
+          83,
+          82,
+          81,
+          80
+        ]
+      },
+      "dmg1": {
+        "name": "dmg1",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          48,
+          49
+        ]
+      },
+      "dmg3": {
+        "name": "dmg3",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          51,
+          50
+        ]
+      },
+      "dmg7": {
+        "name": "dmg7",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          90,
+          91
+        ]
+      },
+      "dmg9": {
+        "name": "dmg9",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          93,
+          92
+        ]
+      },
+      "cast1": {
+        "name": "cast1",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          4,
+          5
+        ]
+      },
+      "cast3": {
+        "name": "cast3",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          13,
+          12,
+          29
+        ]
+      },
+      "dead1": {
+        "name": "dead1",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          88
+        ]
+      },
+      "dead3": {
+        "name": "dead3",
+        "speed": 10,
+        "adjust": false,
+        "pattern": [
+          89
+        ]
+      }
+    }
   }
 }
