@@ -381,8 +381,8 @@
     "cols": 6,
     "rows": 10,
     "anchorX": 0.5,
-    "anchorY": 1,
-    "sampleImg": "C:\\Users\\Zarudin\\Documents\\Games\\Project1\\img\\characters\\%comodo-sprite.png",
+    "anchorY": 0.5,
+    "sampleImg": "C:\\Users\\Zarudin\\Documents\\Games\\Aeviternus\\img\\characters\\%comodo-sprite.png",
     "poses": {
       "move3": {
         "name": "move3",
@@ -750,7 +750,7 @@
     "name": "bapho",
     "cols": 8,
     "rows": 16,
-    "anchorX": 1,
+    "anchorX": 0.5,
     "anchorY": 1,
     "sampleImg": "C:\\Users\\Zarudin\\Documents\\Games\\Aeviternus\\img\\characters\\%bapho-sprite.png",
     "poses": {
