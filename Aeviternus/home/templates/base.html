@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/styles.css' %}" type='text/css'>
+    {% block head %}
+    <meta charset="utf-8">
+    <title>Aevertinus | Base</title>
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="brand">
+          <h1><span class="highlight">Aev</span>iternus</h1>
+        </div>
+      <nav>
+        <ul>
+            <li class="current"><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="builds.html">Buy Now</a></li>
+              <li><a href="builds.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+{% block body %}
+{% endblock %}
+<footer>
+  <p>Aeviternus , Copyright &copy; 2018</p>
+</footer>
+  </body>
+</html>

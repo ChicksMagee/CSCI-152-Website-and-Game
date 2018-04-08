@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+{% block head %}
+<meta charset = "UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Aeviternus is a 2D action oriented rpg">
+<meta name="keywords" content=" gaming, pc, productivity, gaming enthusiasts">
+<meta name="author" content="Troy Samra">
+<title>Aevertinus | Home</title>
+{% endblock %}
+{% load static %}
+</head>
+<body>
+  {% block body %}
+<section id="slideshow">
+  <div class="container" style="background-image:url({% static 'home/img/Login Screen.png' %})">
+    <h1><span class="highlight">2D</span> Action RPG</h1>
+    <p>Battle to reclaim your soul in <span class="highlight">Aeviternus</span></p>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="container">
+    <h1>Join the Fight</h1>
+    <form>
+      <input type="email" placeholder="Enter Email...">
+      <button type="submit" class="button_1">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<section id="boxes">
+  <div class="container">
+  <div class="box">
+    <a href="builds.html">
+    <img src="{% static 'home/img/gamingpc.png' %}">
+    </a>
+    <h3>ABS system</h3>
+    <p>Enjoy our Action Battle System that puts you in control of your journey</p>
+  </div>
+  <div class="box">
+    <img src="{% static 'home/img/productivitypc.png' %}">
+    <h3>Travel to Many Worlds</h3>
+    <p>Travel to any world you like</p>
+  </div>
+  <div class="box">
+      <img src="{% static 'home/img/midrangepc.png' %}">
+    <h3>Rich and Engaging Story</h3>
+    <p>Learn ancient powers to reclaim your soul</p>
+  </div>
+</div>
+</section>
+{% endblock %}
+</body>
+</html>
