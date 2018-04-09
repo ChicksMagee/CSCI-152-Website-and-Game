@@ -130,7 +130,6 @@ font-size: 20px;
   height: auto;
 }
 
-
 footer{
   padding: 20px;
   margin: 20px;
@@ -139,9 +138,41 @@ footer{
   text-align: center;
 }
 
+footer a{
+  color:#ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+footer li{
+float: left;
+display:inline;
+padding: 0 20px 0 20px;
+}
+
+footer #brand{
+  float: left;
+}
+
+footer nav{
+  float: right;
+  margin-top: 10px;
+}
+
+footer .highlight, footer .current a{
+color: #4897d8;
+font-weight: bold;
+}
+
+footer a:hover{
+  color:#ffffff;
+  font-weight: bold;
+}
+
 
 @media(max-width: 768px){
-  header #brand, header nav, header nav li, #newsletter h1, #newsletter form, #boxes .box{
+  header #brand, header nav, header nav li, footer nav, footer nav li, footer#brand, #newsletter h1, #newsletter form, #boxes .box{
     float:none;
     text-align: center;
     width:100%;
