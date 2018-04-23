@@ -4,6 +4,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'home/styles.css' %}" type='text/css'>
     {% block head %}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <meta charset="utf-8">
     <title>Aevertinus | Base</title>
     {% endblock %}
@@ -16,10 +17,10 @@
         </div>
       <nav>
         <ul>
-            <li class="current"><a href="home/">Home</a></li>
-            <li><a href="about/">About</a></li>
-            <li><a href="buy-now/">Buy Now</a></li>
-              <li><a href="login/">Login</a></li>
+            <li class="current"><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'buy-now' %}">Buy Now</a></li>
+              <li><a href="{% url 'login' %}">Login</a></li>
         </ul>
       </nav>
     </div>
@@ -29,13 +30,15 @@
 <footer>
   <nav>
     <ul>
-        <li class="current"><a href="home/">Home</a></li>
-        <li><a href="about/">About</a></li>
-        <li><a href="buy-now/">Buy Now</a></li>
-          <li><a href="login/">Login</a></li>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'buy-now' %}">Buy Now</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
     </ul>
   </nav>
   <p>Aeviternus , Copyright &copy; 2018</p>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
   </body>
 </html>
