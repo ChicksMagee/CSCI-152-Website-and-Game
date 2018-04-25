@@ -35,6 +35,7 @@
 		
 	}
 
+	// update command list when selecting in game
 	Scene_Menu.prototype.update = function(){
 		Scene_MenuBase.prototype.update.call(this);
 			switch(this._commandWindow._index){
@@ -90,7 +91,7 @@
 
 	
 
-	//Engine's function to refresh the hero's status Window ex. hpbar etc.
+	//refreshes hero's stats
 	Scene_Menu.prototype.start = function() {
     	Scene_MenuBase.prototype.start.call(this);
     	this._statusWindow.refresh();
@@ -151,10 +152,10 @@
 	    this.addCommand(TextManager.gameEnd, 'gameEnd', enabled);
 	};
 
-	//create BG
+	//create BG and load 
 	Scene_Menu.prototype.createBackground = function() {
     this._backgroundSprite = new Sprite();
-    this._backgroundSprite.bitmap = ImageManager.loadPicture('Night');
+    this._backgroundSprite.bitmap = ImageManager.loadPicture('menuBG');
     this.addChild(this._backgroundSprite);
 	};
 
@@ -179,23 +180,24 @@
     var actor = $gameParty.members()[index];
     var rect = this.itemRect(index);
     var x = rect.x + 162;
-    var y = rect.y + rect.height / 2 - this.lineHeight() * 1.5;
+    var y = rect.y + 162;//rect.height / 2 - this.lineHeight() * 1.5;//1.5
     var width = rect.width - x - this.textPadding();
     //this.drawActorSimpleStatus(actor, x, y, width);
     var lineHeight = this.lineHeight();
-    var x2 = x + 600;//180
+   // var x2 = x + 600;//180
     var width2 = Math.min(200, width - 180 - this.textPadding());
     this.drawActorName(actor, x, y);
     this.drawActorLevel(actor, x, y + lineHeight * 1);
     this.drawActorIcons(actor, x, y + lineHeight * 2);
     //this.drawActorClass(actor, x2, y);
-    this.drawActorHp(actor, x2, y + lineHeight * 1, width2);
-    this.drawActorMp(actor, x2, y + lineHeight * 2, width2);
+    this.drawActorHp(actor, x, y + lineHeight * 3, width2);
+    this.drawActorMp(actor, x, y + lineHeight * 4, width2);
 
 
     
 	};
 
+	
 
 
 
