@@ -21,7 +21,7 @@
     <nav class="teal">
       <div class="container">
         <div class="nav-wrapper">
-          <a href="{% url 'home' %}" class="brand-logo">Aeviternus</a>
+          <a href="{% url 'home' %}" class="brand-logo"><i class="material-icons left">donut_small</i>Aeviternus</a>
           <a href="#" data-target="mobile-nav" class="sidenav-trigger">
             <i class="material-icons">menu</i>
           </a>
@@ -37,6 +37,9 @@
             </li>
             <li>
             <a href= "{% url 'buy-now' %}"  class="waves-effect waves-light btn-small pulse"><i class="material-icons left">monetization_on</i>Buy Now</a>
+            <li>
+            <a href="{% url 'login' %}">Login</a>
+            </li>
 
             </li>
           </ul>
@@ -57,6 +60,9 @@
     <li>
       <a href="{% url 'buy-now' %}">Buy Now</a>
     </li>
+    <li>
+      <a href="{% url 'login' %}">login</a>
+    </li>
   </ul>
 
   {% block body %}
@@ -72,19 +78,10 @@
             <h4>Follow Aeviternus Development</h4>
             <p>Follow us on social media for upcoming Beta Events</p>
             <a href="#" class="white-text">
-              <i class="fab fa-facebook fa-4x"></i>
+              <i class="fab fa-facebook fa-2x"></i>
             </a>
             <a href="#" class="white-text">
-              <i class="fab fa-twitter fa-4x"></i>
-            </a>
-            <a href="#" class="white-text">
-              <i class="fab fa-linkedin fa-4x"></i>
-            </a>
-            <a href="#" class="white-text">
-              <i class="fab fa-google-plus fa-4x"></i>
-            </a>
-            <a href="#" class="white-text">
-              <i class="fab fa-pinterest fa-4x"></i>
+              <i class="fab fa-twitter fa-2x"></i>
             </a>
           </div>
          <p class="flow-text">Aeviternus &copy; 2018 </p>
