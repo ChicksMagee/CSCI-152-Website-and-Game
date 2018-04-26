@@ -9,5 +9,5 @@ def about(request):
 def buyNow(request):
     return render(request, 'home/buy-now.html')
 
-def login(request):
-    return render(request, 'home/login.html')
+def contact(request):
+    return render(request, 'home/contact.html')
