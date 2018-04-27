@@ -18,4 +18,8 @@ def create_profile(sender, **kwargs):
 post_save.connect(create_profile, sender = User)
 
 
-#class ContactForm(models.Model):
+class ContactForm(models.Model):
+    Name = models.CharField(max_length= 50)
+    Email = models.EmailField()
+    Phone = models.IntegerField()
+    Message = models.CharField(max_length= 200)
