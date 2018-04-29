@@ -19,7 +19,12 @@ post_save.connect(create_profile, sender = User)
 
 
 class ContactForm(models.Model):
-    Name = models.CharField(max_length= 50)
+    Name = models.CharField(max_length= 50, default='')
     Email = models.EmailField()
-    Phone = models.IntegerField()
-    Message = models.CharField(max_length= 200)
+    Phone = models.CharField(max_length= 50, default='')
+    Message = models.CharField(max_length= 200, default='')
+
+
+class Purchase(models.Model):
+    Name = models.CharField(max_length = 50, default='')
+    

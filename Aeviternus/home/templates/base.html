@@ -27,6 +27,12 @@
           </a>
           <ul class="right hide-on-med-and-down">
             <li>
+              {% if user.is_authenticated %}
+              <a href="#">
+                  Welcome {{ user.first_name }}</a>
+              {% endif %}
+            </li>
+            <li>
               <a href="{% url 'home' %}">Home</a>
             </li>
             <li>
@@ -37,11 +43,16 @@
             </li>
             <li>
             <a href= "{% url 'buy-now' %}"  class="waves-effect waves-light btn-small pulse"><i class="material-icons left">monetization_on</i>Buy Now</a>
-            <li>
-            <a href="{% url 'login' %}">Login/Register</a>
+          </li>
+          <li>
+            {% if not user.is_authenticated %}
+              <a href="{% url 'login' %}">Login/Register</a>
+                {% endif %}
+              {% if user.is_authenticated %}
+            <a href="{% url 'account' %}"><i class="material-icons left">account_circle</i>Account</a>
+                {% endif %}
             </li>
 
-            </li>
           </ul>
         </div>
       </div>

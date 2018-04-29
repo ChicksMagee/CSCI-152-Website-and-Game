@@ -27,21 +27,11 @@
           <div class="col s12 m6">
             <div class="card-panel grey lighten-3">
               <h5>Please fill out this form</h5>
-              <form method ="post" action = {% url 'contact' %}>
+              <form method ="post">
                 {% csrf_token %}
-              <div class="input-field">
-                <input name = "name" type="text" placeholder="Name">
-              </div>
-              <div class="input-field">
-                <input name= "email" type="email" placeholder="Email">
-              </div>
-              <div class="input-field">
-                <input name = "phone" type="number" placeholder="Phone">
-              </div>
-              <div class="input-field">
-                <textarea name ="message" class="materialize-textarea" placeholder="Enter Message"></textarea>
-              </div>
-              <input type="submit" value="Submit" class="btn">
+                  {{ field.errors }}
+                  {{ form.as_p }}
+              <button class="waves-effect waves-light btn-large">Submit</button>
             </form>
             </div>
           </div>

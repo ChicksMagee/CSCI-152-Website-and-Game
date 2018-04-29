@@ -4,5 +4,81 @@
 {% endblock %}
 
 {% block body %}
-<p>Buy Now Page</p>
+<section class="section section-icons grey lighten-4 center">
+  <div class="container">
+    <div class="col s12 m7">
+      <br>
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="flow-text grey-text text-darken-2"><i class="material-icons middle ">donut_small</i>Reclaim Your Soul Today</p>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+        <div class="col s12 m3">
+            <a href="{% url 'buy-form' %}" class="brand-logo grey-text text-darken-2">
+              <div class="card-panel hoverable">
+            <i class="material-icons large teal-text">child_friendly</i>
+            <h4>Frontier Edition</h4>
+            <br>   <br>   <br>
+            <ul>
+              <li>
+                <p>Gains access to the upcoming beta</p>
+                   <br>
+                <p class="flow-text">FREE</p>
+              </li>
+            </ul>
+          </div>
+          </a>
+        </div>
+      <div class="col s12 m3">
+          <a href="{% url 'buy-form' %}">
+        <div class="card-panel hoverable grey-text text-darken-2">
+          <i class="material-icons large teal-text">group_work</i>
+          <h4>Founders Edition</h4>
+          <ul>
+            <li>
+              <p>Includes the Base Game</p>
+              <p>Founder's Armor Set and Sword</p>
+              <p>5 Health Potions</p>
+              <p class="flow-text">9.99</p>
+            </li>
+          </ul>
+        </div>
+      </a>
+      </div>
+      <div class="col s12 m3">
+          <a href="{% url 'buy-form' %}">
+        <div class="card-panel hoverable grey-text text-darken-2">
+          <i class="material-icons large teal-text">colorize</i>
+          <h4>Soulbound Editon</h4>
+          <ul>
+            <li>
+              <p>Includes Founder Editon Perks</p>
+              <p>500 Gold</p>
+              <p>Tier 2 Armor Sets and Dyes</p>
+              <p class="flow-text">19.99</p>
+            </li>
+          </ul>
+        </div>
+      </a>
+      </div>
+      <div class="col s12 m3">
+          <a href="{% url 'buy-form' %}">
+        <div class="card-panel hoverable grey-text text-darken-2">
+          <i class="material-icons large teal-text">whatshot</i>
+          <h4>Godlike Editon</h4>
+          <br>
+          <p>Includes Soulbound Editon Perks</p>
+          <p>Collector's Editon complete with Lore Book</p>
+          <p>Tier 3 Armor Sets and Dyes</p>
+          <p class="flow-text">29.99</p>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

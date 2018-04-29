@@ -6,10 +6,13 @@
 {% block body %}
 <div class="container center-align row col s6">
 <div class="col s4 offset-s4">
-<form method="post">
+  <br>
+<form method="post" class="card-panel grey lighten-3">
   {% csrf_token %}
+  {{ field.errors }}
   {{ form.as_p }}
-  <button class="waves-effect waves-light btn-large">Register</a></button>
+  <br>
+  <button class="waves-effect waves-light btn-large">Register</button>
 </form>
 </div>
 </div>
