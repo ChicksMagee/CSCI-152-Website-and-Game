@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block head %}
-    <title>Aeviternus | Buy-Form </title>
+    <title>Aeviternus | Buy Form </title>
 {% endblock %}
   </head>
   <body>
@@ -17,7 +17,7 @@
                 {% csrf_token %}
                   {{ field.errors }}
                   {{ form.as_p }}
-              <button class="waves-effect waves-light btn-large">Submit</button>
+              <a href= "{% url 'home' %}"  class="waves-effect waves-light btn-small">Return Home</a>
             </form>
             </div>
           </div>

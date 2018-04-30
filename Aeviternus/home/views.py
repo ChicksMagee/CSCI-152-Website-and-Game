@@ -30,7 +30,7 @@ def register(request):
         else:
 
             args = {'form': form}
-            return render(request, 'home/register.html', args)
+            return render(request, 'home/reg_form.html', args)
     else:
         form = RegistrationForm()
 
