@@ -6,33 +6,30 @@
   <body>
 {% block body %}
     <!-- Section: Contact -->
-    <section id="contact" class="section section-contact scrollspy">
+    <section>
       <div class="container">
         <div class="row">
-          <div class="col s12 m6">
+          <div class="col s12 m3">
             <div class="card-panel teal white-text center">
-              <i class="material-icons">email</i>
-              <h5>Profile</h5>
-              <p>If you have any comments or suggestions for any upcoming content or features you would like to see added, We want to hear about it.</p>
+            <i class="material-icons left large">account_circle</i></a>
+              <h5>{{ user.first_name }} {{ user.last_name }}</h5>
+              <a href="{% url 'logout' %}" class = "white-text right">logout</a>
+              <br>
+              <p>{{ user.userprofile.description }}</p>
             </div>
             <ul class="collection with-header">
               <li class="collection-header">
-                <h4>Location</h4>
+                <h4>{{ user.userprofile.street_address }}</h4>
               </li>
-              <li class="collection-item">CSCI 152 Development Lab</li>
-              <li class="collection-item">5241 N Maple Ave</li>
-              <li class="collection-item">Fresno, CA 93740</li>
+              <li class="collection-item">{{ user.userprofile.street_address }}</li>
+              <li class="collection-item">{{ user.userprofile.city }}</li>
+              <li class="collection-item">{{ user.userprofile.Zipcode }}</li>
             </ul>
           </div>
-          <div class="col s12 m6">
+          <div class="col s12 m9">
             <div class="card-panel grey lighten-3">
-              <h5>Please fill out this form</h5>
-              <form method ="post">
-                {% csrf_token %}
-                  {{ field.errors }}
-                  {{ form.as_p }}
-              <button class="waves-effect waves-light btn-large">Submit</button>
-            </form>
+
+
             </div>
           </div>
         </div>

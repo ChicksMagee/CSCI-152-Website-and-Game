@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from home.forms import RegistrationForm, ContactForm
+from home.forms import RegistrationForm, ContactModelForm
 
 def home(request):
     return render(request, 'home/home.html')
@@ -21,10 +21,11 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/home')
+            return redirect('/')
         else:
+
             args = {'form': form}
-            return render(request, 'home/reg_form.html', args)
+            return render(request, 'home/register.html', args)
     else:
         form = RegistrationForm()
 
@@ -34,15 +35,17 @@ def register(request):
 
 def contact(request):
     if request.method=='POST':
-        form = ContactForm(request.POST)
+        form = ContactModelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/home')
+            return redirect('/')
         else:
+
             args = {'form': form}
             return render(request, 'home/contact.html', args)
+
     else:
-        form = ContactForm()
+        form = ContactModelForm()
 
         args = {'form': form}
         return render(request, 'home/contact.html', args)

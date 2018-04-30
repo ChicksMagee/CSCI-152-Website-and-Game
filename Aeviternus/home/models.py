@@ -4,11 +4,19 @@ from django.db.models.signals import post_save
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
-    description = models.CharField(max_length=100, default='')
-    city = models.CharField(max_length=100, default='')
-    website = models.URLField(default='')
-    phone = models.IntegerField(default=0)
-    on_delete = models.CASCADE,
+    first_name =  models.CharField(max_length=25, default='')
+    last_name =  models.CharField(max_length=25, default='')
+    description = models.CharField(max_length=500, default='')
+    street_address = models.CharField(max_length=50, default='')
+    city = models.CharField(max_length=20, default='')
+    State = models.CharField(max_length=20, default='')
+    Zipcode = models.CharField(max_length=10, default='')
+    phone = models.IntegerField(default='')
+    on_delete = models.CASCADE
+
+    def __str__(self):
+        title = self.first_name + " " + self.last_name + "'s User Profile"
+        return title
 
 def create_profile(sender, **kwargs):
     if kwargs['created']:
@@ -19,12 +27,16 @@ post_save.connect(create_profile, sender = User)
 
 
 class ContactForm(models.Model):
-    Name = models.CharField(max_length= 50, default='')
-    Email = models.EmailField()
-    Phone = models.CharField(max_length= 50, default='')
-    Message = models.CharField(max_length= 200, default='')
+    name = models.CharField(max_length= 25, default='')
+    email = models.EmailField()
+    phone = models.CharField(max_length= 10, default='')
+    message = models.CharField(max_length= 500, default='')
+
+    def __str__(self):
+        title = self.name + "'s Contact Form"
+        return title
+
 
 
 class Purchase(models.Model):
     Name = models.CharField(max_length = 50, default='')
-    
