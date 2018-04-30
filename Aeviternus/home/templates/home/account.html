@@ -13,7 +13,9 @@
             <div class="card-panel teal white-text center">
             <i class="material-icons left large">account_circle</i></a>
               <h5>{{ user.first_name }} {{ user.last_name }}</h5>
-              <a href="{% url 'logout' %}" class = "white-text right">logout</a>
+                  <a href="{% url 'logout' %}" class = "white-text right">Logout</a>
+                    <br>
+              <a href="{% url 'edit_profile' %}" class = "white-text right">Edit Profile</a>
               <br>
               <p>{{ user.userprofile.description }}</p>
             </div>

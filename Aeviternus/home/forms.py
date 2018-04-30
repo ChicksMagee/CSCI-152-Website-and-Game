@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.forms import ModelForm
 from home.models import ContactForm
 
@@ -39,3 +39,9 @@ class ContactModelForm(ModelForm):
     class Meta:
         model = ContactForm
         fields = ['name','email','phone','message']
+
+class EditProfileModelForm(UserChangeForm):
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'password']

@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^login/$', login, {'template_name': 'home/login.html'}, name='login'),
     url(r'^logout/$', logout, {'template_name': 'home/logout.html'}, name='logout'),
+    url(r'^account/edit/$', views.edit_profile, name='edit_profile'),
     url(r'^account/$', views.account, name='account'),
     url(r'^register/$', views.register, name='register'),
+    url(r'^account/password/$', views.change_password, name='change_password'),
 ]

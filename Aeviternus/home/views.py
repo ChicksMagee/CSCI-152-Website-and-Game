@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
-from home.forms import RegistrationForm, ContactModelForm
+from home.forms import (
+    RegistrationForm,
+    ContactModelForm,
+    EditProfileModelForm)
 
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
 def home(request):
     return render(request, 'home/home.html')
 
@@ -49,3 +54,39 @@ def contact(request):
 
         args = {'form': form}
         return render(request, 'home/contact.html', args)
+
+
+def edit_profile(request):
+    if request.method=='POST':
+        form = EditProfileModelForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('/home/account/')
+        else:
+
+            args = {'form': form}
+            return render(request, 'home/edit_profile.html', args)
+
+    else:
+        form = EditProfileModelForm(instance=request.user)
+
+        args = {'form': form}
+        return render(request, 'home/edit_profile.html', args)
+
+def change_password(request):
+    if request.method=='POST':
+        form = PasswordChangeForm(data=request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return redirect('/home/account/')
+        else:
+
+            args = {'form': form}
+            return render(request, 'home/change_password.html', args)
+
+    else:
+        form = PasswordChangeForm(user=request.user)
+
+        args = {'form': form}
+        return render(request, 'home/change_password.html', args)

@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 {% block head %}
     <title>Aeviternus | About</title>
+    {% load static %}
 {% endblock %}
 
 {% block body %}
-<p>About Page</p>
+<section class="parallax">
+  <div class="parallax-container">
+    <div class="parallax"><img src="{% static 'home/img/background.png' %}"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Parallax</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="{% static 'home/img/background.png' %}"></div>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<script>
+  var elem = document.querySelectorAll('.parallax');
+  M.Parrallax.init(elem, {});
+</script>
 {% endblock %}
