@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.forms import ModelForm
-from home.models import ContactForm
+from home.models import ContactForm, UserProfile
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -34,14 +34,13 @@ class ContactModelForm(ModelForm):
     name = forms.CharField(max_length=50)
     email = forms.EmailField(required=True)
     phone = forms.CharField(max_length=15)
-    message = forms.CharField(max_length=50)
+    message = forms.CharField(max_length=50, required=False)
 
     class Meta:
         model = ContactForm
         fields = ['name','email','phone','message']
 
 class EditProfileModelForm(UserChangeForm):
-
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email', 'password']

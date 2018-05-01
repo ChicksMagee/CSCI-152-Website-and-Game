@@ -6,12 +6,14 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     first_name =  models.CharField(max_length=25, default='')
     last_name =  models.CharField(max_length=25, default='')
+    email = models.EmailField(default='')
+    phone = models.IntegerField(default='')
     description = models.CharField(max_length=500, default='')
     street_address = models.CharField(max_length=50, default='')
     city = models.CharField(max_length=20, default='')
-    State = models.CharField(max_length=20, default='')
-    Zipcode = models.CharField(max_length=10, default='')
-    phone = models.IntegerField(default='')
+    state = models.CharField(max_length=20, default='')
+    zipcode = models.CharField(max_length=10, default='')
+    image = models.ImageField(upload_to='profile_image', blank=True)
     on_delete = models.CASCADE
 
     def __str__(self):
@@ -28,15 +30,10 @@ post_save.connect(create_profile, sender = User)
 
 class ContactForm(models.Model):
     name = models.CharField(max_length= 25, default='')
-    email = models.EmailField()
+    email = models.EmailField(default='')
     phone = models.CharField(max_length= 10, default='')
     message = models.CharField(max_length= 500, default='')
 
     def __str__(self):
         title = self.name + "'s Contact Form"
         return title
-
-
-
-class Purchase(models.Model):
-    Name = models.CharField(max_length = 50, default='')
