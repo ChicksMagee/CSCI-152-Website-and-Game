@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from home.forms import (
+    UserCreationForm,
     RegistrationForm,
     ContactModelForm,
     EditProfileModelForm)
@@ -25,18 +26,20 @@ def buyForm(request):
 
 def register(request):
     if request.method=='POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
+        reg_form = RegistrationForm(request.POST)
+        edit_profile_form = EditProfileModelForm(request.POST)
+        if reg_form.is_valid() and edit_profile_form.is_valid():
+            reg_form.save()
+            edit_profile_form.save()
             return redirect('/')
         else:
 
-            args = {'form': form}
+            args = {'reg_form': reg_form, 'edit_profile_form': edit_profile_form}
             return render(request, 'home/reg_form.html', args)
     else:
-        form = RegistrationForm()
-
-        args = {'form': form}
+        reg_form = RegistrationForm()
+        edit_profile_form = EditProfileModelForm()
+        args = {'reg_form': reg_form, 'edit_profile_form': edit_profile_form}
         return render(request, 'home/reg_form.html', args)
 
 

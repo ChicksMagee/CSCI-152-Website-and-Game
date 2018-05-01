@@ -42,5 +42,20 @@ class ContactModelForm(ModelForm):
 
 class EditProfileModelForm(UserChangeForm):
     class Meta:
-        model = User
-        fields = ['first_name', 'last_name', 'email', 'password']
+        model = UserProfile
+        fields = ['phone', 'description', 'street_address', 'city', 'state', 'zipcode', 'image', 'password']
+    def save(self, commit=True):
+        form = super(EditProfileModelForm, self).save(commit=False)
+        form.phone = self.cleaned_data['phone']
+        form.description = self.cleaned_data['description']
+        form.street_address = self.cleaned_data['street_address']
+        form.city = self.cleaned_data['city']
+        form.state = self.cleaned_data['state']
+        form.zipcode = self.cleaned_data['zipcode']
+        form.image = self.cleaned_data['image']
+        form.password = self.cleaned_data['password']
+
+        if commit:
+            form.save()
+
+        return form

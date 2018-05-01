@@ -5,13 +5,10 @@ from django.utils import timezone
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
-    first_name =  models.CharField(max_length=25, default='')
-    last_name =  models.CharField(max_length=25, default='')
-    email = models.EmailField(default='')
-    phone = models.IntegerField(default='')
-    description = models.CharField(max_length=500, default='')
+    phone = models.CharField(max_length=100, default='')
+    description = models.CharField(max_length=100, default='')
     street_address = models.CharField(max_length=50, default='')
-    city = models.CharField(max_length=20, default='')
+    city = models.CharField(max_length=100, default='')
     state = models.CharField(max_length=20, default='')
     zipcode = models.CharField(max_length=10, default='')
     image = models.ImageField(upload_to='profile_image', blank=True)
@@ -22,9 +19,8 @@ class UserProfile(models.Model):
         return title
 
 def create_profile(sender, **kwargs):
-    if kwargs['created']:
+       if kwargs['created']:
         user_profile=UserProfile.objects.create(user=kwargs['instance'])
-
 
 post_save.connect(create_profile, sender = User)
 

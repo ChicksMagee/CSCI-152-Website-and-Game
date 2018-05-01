@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col s12 m4">
             <div class="card-panel teal white-text">
-          <img class="responsive-img" src="{{user.userprofile.image.url}}">
+           {% if user.userprofile.image %} <img class="responsive-img" src="{{user.userprofile.image.url}}">{% endif %}
               <h5 class="center">{{ user.first_name }} {{ user.last_name }}</h5>
               <a href="{% url 'logout' %}" class = "white-text right">Logout</a>
               <a href="{% url 'edit_profile' %}" class = "white-text left">Edit Profile</a>
