@@ -3,11 +3,13 @@ from home.forms import (
     RegistrationForm,
     ContactModelForm,
     EditProfileModelForm)
-
 from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
+from .models import Post
+from django.utils import timezone
 def home(request):
-    return render(request, 'home/home.html')
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'home/home.html', {'posts': posts})
 
 def about(request):
     return render(request, 'home/about.html')

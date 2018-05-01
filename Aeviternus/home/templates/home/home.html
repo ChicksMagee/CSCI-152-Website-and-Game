@@ -39,21 +39,21 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m4">
-        <div class="card-panel">
+        <div class="card-panel hoverable">
           <i class="material-icons large teal-text">colorize</i>
           <h4>ABS System</h4>
-          <p>Enjoy our Action Battle System that puts you in control of your journey</p>
+          <p>Our Action Battle System puts you in control</p>
         </div>
       </div>
       <div class="col s12 m4">
-        <div class="card-panel">
-          <i class="material-icons large teal-text">videogame_asset</i>
+        <div class="card-panel hoverable">
+          <i class="material-icons large teal-text">language</i>
           <h4>Travel to Many Worlds</h4>
           <p>Travel to any world you like</p>
         </div>
       </div>
       <div class="col s12 m4">
-        <div class="card-panel">
+        <div class="card-panel hoverable">
           <i class="material-icons large teal-text">textsms</i>
           <h4>Engaging Story</h4>
           <p>Learn ancient powers to reclaim your soul</p>
@@ -62,6 +62,25 @@
     </div>
   </div>
 </section>
+
+<!-- Section: Blog Posts -->
+<section class="section section-icons grey lighten-4">
+  <div class="container">
+        <div class="card-panel hoverable">
+      <h1 class="center"><i class="material-icons medium teal-text">assignment</i>Developer Blog Posts</h1>
+    </div>
+    {% for post in posts %}
+    <div class="col s12 m4">
+      <div class="card-panel hoverable">
+        <i class="material-icons  teal-text">textsms</i>
+        {{ post.published_date }}
+        <h4>{{ post.title }}</h4>
+        <p>{{ post.text }}</p>
+      </div>
+    </div>
+  {% endfor %}
+    </div>
+  </section>
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 <script>
