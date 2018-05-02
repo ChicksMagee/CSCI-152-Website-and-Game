@@ -12,6 +12,7 @@
           <div class="col s12 m4">
             <div class="card-panel teal white-text">
            {% if user.userprofile.image %} <img class="responsive-img" src="{{user.userprofile.image.url}}">{% endif %}
+           {% if not user.userprofile.image %}<i class="material-icons large white-text">account_circle</i>{% endif %}
               <h5 class="center">{{ user.first_name }} {{ user.last_name }}</h5>
               <a href="{% url 'logout' %}" class = "white-text right">Logout</a>
               <a href="{% url 'edit_profile' %}" class = "white-text left">Edit Profile</a>
@@ -22,11 +23,17 @@
               <li class="collection-header">
                 <h4 class= "center-align">Profile Info</h4>
               </li>
-              <li class="collection-item">First Name: {{ user.userprofile.first_name }}</li>
-              <li class="collection-item">Last Name: {{ user.userprofile.last_name }}</li>
+              <li class="collection-item">First Name: {{ user.first_name }}</li>
+              <li class="collection-item">Last Name: {{ user.last_name }}</li>
+               {% if user.userprofile.street_address %} 
               <li class="collection-item">Address: {{ user.userprofile.street_address }} {{ user.userprofile.city }} {{ user.userprofile.Zipcode }}</li>
+              {% endif %}
+                 {% if user.userprofile.phone %}
               <li class="collection-item">Phone: {{ user.userprofile.phone }}</li>
+                    {% endif %}
+                 {% if user.userprofile.description %}
               <li class="collection-item">Description: {{ user.userprofile.description }}</li>
+                {% endif %}
             </ul>
               </div>
           </div>

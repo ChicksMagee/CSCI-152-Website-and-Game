@@ -26,7 +26,6 @@
           </div>
           <div class="col s12 m6">
             <div class="card-panel grey lighten-3">
-              <h5>Please fill out this form</h5>
               <form method ="post" action="{% url 'contact' %}">
                 {% csrf_token %}
               {{ field.errors }}

@@ -12,10 +12,11 @@ class UserProfile(models.Model):
     state = models.CharField(max_length=20, default='')
     zipcode = models.CharField(max_length=10, default='')
     image = models.ImageField(upload_to='profile_image', blank=True)
+    paid = models.BooleanField(default=False)
     on_delete = models.CASCADE
 
     def __str__(self):
-        title = self.first_name + " " + self.last_name + "'s User Profile"
+        title = self.user.first_name + " " + self.user.last_name + "'s User Profile"
         return title
 
 def create_profile(sender, **kwargs):

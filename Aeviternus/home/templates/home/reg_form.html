@@ -10,10 +10,7 @@
 <form method="post" class="card-panel grey lighten-3">
   {% csrf_token %}
   {{ field.errors }}
-  {{ reg_form.as_p }}
-  {% csrf_token %}
-  {{ field.errors }}
-  {{ edit_profile_form.as_p }}
+  {{ form.as_p }}
   <br>
   <button type = "submit" class="waves-effect waves-light btn-large">Register</button>
 </form>
