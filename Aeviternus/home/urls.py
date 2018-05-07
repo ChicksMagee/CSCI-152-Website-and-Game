@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^buy-now/$', views.buyNow, name='buy-now'),
     url(r'^buy-form/$', views.buyForm, name='buy-form'),
     url(r'^contact/$', views.contact, name='contact'),
+    url(r'^contact-done/$', views.contact_done, name='contact-done'),
     url(r'^login/$', login, {'template_name': 'home/login.html'}, name='login'),
     url(r'^logout/$', logout, {'template_name': 'home/logout.html'}, name='logout'),
     url(r'^account/edit/$', views.edit_profile, name='edit_profile'),

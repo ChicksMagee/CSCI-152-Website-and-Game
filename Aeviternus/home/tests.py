@@ -163,4 +163,4 @@ class MyViewTests(TestCase):
         'email': 'tesamra@gmail.com',
         'phone': '5593416905',
         'message':'Hello World'})
-        self.assertRedirects(response, '/')
+        self.assertRedirects(response, '/home/contact-done/')

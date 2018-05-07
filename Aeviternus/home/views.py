@@ -22,7 +22,7 @@ def buyNow(request):
     return render(request, 'home/buy-now.html')
 
 def buyForm(request):
-    return render(request, 'home/buy-form.html', args)
+    return render(request, 'home/buy-form.html')
 
 def register(request):
     if request.method=='POST':
@@ -46,7 +46,7 @@ def contact(request):
         form = ContactModelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return redirect('/home/contact-done/')
         else:
 
             args = {'form': form}
@@ -57,6 +57,9 @@ def contact(request):
 
         args = {'form': form}
         return render(request, 'home/contact.html', args)
+
+def contact_done(request):
+    return render(request, 'home/contact-done.html')
 
 
 def edit_profile(request):

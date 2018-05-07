@@ -26,12 +26,7 @@
           </div>
           <div class="col s12 m6">
             <div class="card-panel grey lighten-3 hoverable">
-              <form method ="post" action="{% url 'contact' %}">
-                {% csrf_token %}
-              {{ field.errors }}
-                {{ form.as_p }}
-              <button type="submit" class="waves-effect waves-light btn-large">Submit</button>
-            </form>
+              <p>Thank You! We will get back to you as soon as possible.</p>
             </div>
           </div>
         </div>
