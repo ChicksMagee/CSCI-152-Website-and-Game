@@ -15,6 +15,35 @@
 
 	};
 
+	// creates windows within equipscreen
+	Scene_Equip.prototype.create = function() {
+    	Scene_MenuBase.prototype.create.call(this);
+		    this.createHelpWindow();
+		    this._helpWindow.opacity = 0;
+		    this.createStatusWindow();
+		    this._statusWindow.opacity = 0;
+		    this.createCommandWindow();
+		    this._commandWindow.opacity = 0;
+		    this.createSlotWindow();
+		    this._slotWindow.opacity = 0;
+		    this.createItemWindow();
+		    this._itemWindow.opacity = 0;
+		    this.refreshActor();
+	};
+
+	Scene_Item.prototype.create = function() {
+    	Scene_ItemBase.prototype.create.call(this);
+		    this.createHelpWindow();
+		    this._helpWindow.opacity = 0;
+		    this.createCategoryWindow();
+		    this._categoryWindow.opacity = 0;
+		    this.createItemWindow();
+		    this._itemWindow.opacity = 0;
+		    this.createActorWindow();
+		    this._actorWindow.opacity = 0;
+	};
+
+	// location of menu buttons via x and y
 	Scene_Menu.prototype.createCommandImages = function(){
 		this._equipButton = new Sprite();
 		this._equipButton.y = 120;
@@ -97,7 +126,7 @@
     	this._statusWindow.refresh();
 	};
 
-	//Engine's function to  handle the menu commands.
+	// function to  handle the menu commands.
 	Scene_Menu.prototype.createCommandWindow = function() {
 	    this._commandWindow = new Window_MenuCommand(0, 0);
 	    this._commandWindow.visible = false;
@@ -152,12 +181,48 @@
 	    this.addCommand(TextManager.gameEnd, 'gameEnd', enabled);
 	};
 
-	//create BG and load 
+	//create main menu BG and load 
 	Scene_Menu.prototype.createBackground = function() {
     this._backgroundSprite = new Sprite();
     this._backgroundSprite.bitmap = ImageManager.loadPicture('menuBG');
     this.addChild(this._backgroundSprite);
 	};
+
+	//create equipmentBG and load
+	Scene_Equip.prototype.createBackground = function() {
+    this._backgroundSprite = new Sprite();
+    this._backgroundSprite.bitmap = ImageManager.loadPicture('equipBG');
+    this.addChild(this._backgroundSprite);
+	};
+
+	//create itemBG and load
+	Scene_Item.prototype.createBackground = function() {
+    this._backgroundSprite = new Sprite();
+    this._backgroundSprite.bitmap = ImageManager.loadPicture('itemBG');
+    this.addChild(this._backgroundSprite);
+	};
+
+	//create saveBG and load
+	Scene_Save.prototype.createBackground = function() {
+    this._backgroundSprite = new Sprite();
+    this._backgroundSprite.bitmap = ImageManager.loadPicture('saveBG');
+    this.addChild(this._backgroundSprite);
+	};
+
+	//create optionsBG and load
+	Scene_Options.prototype.createBackground = function() {
+    this._backgroundSprite = new Sprite();
+    this._backgroundSprite.bitmap = ImageManager.loadPicture('optionBG');
+    this.addChild(this._backgroundSprite);
+	};
+
+	//create gameENDBG and load
+	Scene_GameEnd.prototype.createBackground = function() {
+    this._backgroundSprite = new Sprite();
+    this._backgroundSprite.bitmap = ImageManager.loadPicture('gameEndBG');
+    this.addChild(this._backgroundSprite);
+	};
+
 
 	//creates menu commands
 	Window_MenuCommand.prototype.makeCommandList = function() {
